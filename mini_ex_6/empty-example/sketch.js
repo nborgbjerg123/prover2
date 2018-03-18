@@ -41,7 +41,7 @@ function draw () {
 
   push();
   scale(1.2); //sizing the tree
-  image(img, windowWidth/2-410, 200);
+  image(img, windowWidth/2-390, 200);
   pop();
 
   for (var i = 0; i < flowers.length; i++) { //through all flowers, all aspects of the class are set in motion
