@@ -11,14 +11,14 @@ function preload() { //loading the files beforehand, so it all appears together
 }
 
 function setup() {
-  createCanvas(windowWidth, 900);
+  createCanvas(windowWidth, windowHeight);
   background(10);
   song.play();
 
-  for (var i = 0; i < 8; i++) { //a forloop making all the flowers appear
-    var x = 70 + 300 * i;
-    var maxHeight = random(1100, 900); //the flowers start at different points, so they would grow at the exact same Y-position all together
-    flowers[i] = new Flower(x, 900, maxHeight);
+  for (var i = 0; i < 7; i++) { //a forloop making all the flowers appear
+    var x = 100 + 220 * i;
+    var maxHeight = random(windowHeight+200, windowHeight); //the flowers start at different points, so they would grow at the exact same Y-position all together
+    flowers[i] = new Flower(x, windowHeight, maxHeight);
   }
 
   for (var s = 0; s < 50; s++) { //a for loop making all the stars appear on screnen
@@ -36,12 +36,12 @@ function draw () {
   push();
   fill(10);
   noStroke();
-  rect(0,200, windowWidth, 700);
+  rect(0,200, windowWidth, windowHeight-200);
   pop(); //a non transparent rectangle, so there wouldnt be a trail when the flowers grow, also helps the trees transparency
 
   push();
-  scale(1.2); //sizing the tree
-  image(img, windowWidth/2-410, 200);
+  scale(0.9); //sizing the tree
+  image(img, windowWidth/2-120, 265);
   pop();
 
   for (var i = 0; i < flowers.length; i++) { //through all flowers, all aspects of the class are set in motion
@@ -68,9 +68,9 @@ class Flower {
 
   grow () {
     this.maxHeight = this.maxHeight - this.speed; //the speed of the flowers growth
-    if (this.maxHeight <= 650) { //if it reaches a certain height, make the flower grow down
+    if (this.maxHeight <= 550) { //if it reaches a certain height, make the flower grow down
         this.speed = -0.2;
-      } else if (this.maxHeight >= 900) { //if it goes to the bottom make it grow upwards
+      } else if (this.maxHeight >= windowHeight) { //if it goes to the bottom make it grow upwards
         this.speed = 0.2;
       }
   }
