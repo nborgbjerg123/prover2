@@ -16,7 +16,7 @@ function setup() {
   song.play();
 
   for (var i = 0; i < 8; i++) { //a forloop making all the flowers appear
-    var x = 90 + 300 * i;
+    var x = 70 + 300 * i;
     var maxHeight = random(1100, 900); //the flowers start at different points, so they would grow at the exact same Y-position all together
     flowers[i] = new Flower(x, 900, maxHeight);
   }
@@ -41,7 +41,7 @@ function draw () {
 
   push();
   scale(1.2); //sizing the tree
-  image(img, windowWidth/2-370, 200);
+  image(img, windowWidth/2-410, 200);
   pop();
 
   for (var i = 0; i < flowers.length; i++) { //through all flowers, all aspects of the class are set in motion
