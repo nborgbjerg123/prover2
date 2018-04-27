@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "eksamen",
+  "version": "1.0.0",
+  "description": "sockets try",
+  "main": "p5.js",
+  "keywords": [
+    "sockets",
+    "p5"
+  ],
+  "author": "Nina",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  }
+}
